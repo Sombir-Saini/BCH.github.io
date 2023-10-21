@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy";
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+
+.back {
+  width: 100%;
+  height: 100vh;
+}
+
+.back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top {
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2vw;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  font-weight: 600;
+  color: black;
+  position: fixed;
+  padding: 1.5vmax 4vmax;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navright {
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2vmax;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding: 0vmax 4vmax;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heroleft {
+  font-size: 4vw;
+  flex-direction: column;
+  color: white;
+}
+
+.elem{
+  position: relative;
+  width: 70vw;
+  height: 10vmax;
+  overflow: hidden;
+}
+
+.elem h1:nth-child(1){
+  top: 0;
+}
+
+.elem h1{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pbtn {
+  pointer-events: all;
+  cursor: pointer;
+  padding: 2vmax 3vmax;
+  font-size: 2vw;
+  border: 2px solid white;
+  border-radius: 100vmax;
+  margin-top: 1vmax;
+  filter: contrast(1.5);
+  color: white;
+  background-color: transparent;
+  transition: all ease-in-out 0.5s;
+}
+
+.pbtn:hover {
+  background-color: white;
+  color: black;
+}
+
+#contact, #about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4vmax;
+  width: 100%;
+  height: 100vh;
+  background-color: lightcyan;
+  padding: 6vmax;
+}
+
+#about img {
+  width: 40vw;
+  height: 20vw;
+}
+
+#about p{
+  width: 42vw;
+  height: 20vh;
+  font-size: 1.vw;
+  text-overflow: ellipsis;
+}
+
+.call {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  gap: 4vmax;
+  align-items: center;
+  justify-content: center;
+}
+
+.cout {
+  width: 20vw;
+  height: 20vw;
+  background-color: lightblue;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  padding: 1vmax;
+  animation: cout 10s linear infinite;
+}
+
+.cin {
+  width: 100%;
+  height: 100%;
+  border-radius: 30% 70% 35% 65% / 30% 43% 57% 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: royalblue;
+  animation: cin 10s linear infinite;
+}
+
+.info{
+  color: black;
+}
+
+@keyframes cin {
+  0% {
+    border-radius: 30% 70% 35% 65% / 30% 43% 57% 70%;
+  }
+  25% {
+    border-radius: 54% 46% 35% 65% / 60% 43% 57% 40%;
+  }
+  50% {
+    border-radius: 29% 71% 63% 37% / 60% 71% 29% 40%;
+  }
+  75% {
+    border-radius: 32% 68% 66% 34% / 51% 56% 44% 49%;
+  }
+  100% {
+    border-radius: 30% 70% 35% 65% / 30% 43% 57% 70%;
+  }
+}
+
+@keyframes cout {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 32% 68% 32% 68% / 51% 56% 44% 49%;
+  }
+  50% {
+    border-radius: 69% 31% 32% 68% / 36% 40% 60% 64%;
+  }
+  75% {
+    border-radius: 39% 61% 32% 68% / 67% 64% 36% 33%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 100vmax;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
